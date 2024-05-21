@@ -1,0 +1,44 @@
+body {
+	display: flex;
+	flex-direction: column;
+
+	min-height: 100vh;
+	color: #FFF;
+	font-family: Inter;
+	font-size: 60px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.keyboard {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: auto;
+}
+
+.numberPad {
+	display: flex;
+	flex-grow: 0.7;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.operationPad {
+	display: flex;
+	justify-content: center;
+	flex-grow: 0.3;
+	gap: 40px;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+button {
+	font-size: 60px;
+	font-family: 'Courier New', Courier, monospace;
+}
