@@ -11,11 +11,27 @@ body {
 	line-height: normal;
 }
 
+.displayScreen {
+	display: flex;
+	justify-content: end;
+}
+
+input {
+	height: 20vh;
+	width: 100%;
+	font-size: 60px;
+}
+
+.container {
+	margin-top: auto;
+}
+
 .keyboard {
 	display: flex;
+	flex-direction: column;
 	flex-direction: row;
 	justify-content: space-between;
-	margin-top: auto;
+	margin-bottom: auto;
 }
 
 .numberPad {
