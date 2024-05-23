@@ -2,8 +2,15 @@ const inputScreen = document.querySelector(".input");
 let num1;
 let num2;
 
+//functions
 function displayToScreen (num){
 	inputScreen.textContent += num
+}
+function getNum1 (inputDisplay){
+	num1 = inputDisplay;
+}
+function getNum2 (inputDisplay){
+	num2 = inputDisplay;
 }
 
 //numberPad
@@ -26,6 +33,7 @@ btn5.addEventListener("click",() => {displayToScreen(5)});
 const btn2 = document.querySelector("#btn2 button");
 btn2.addEventListener("click",() => {displayToScreen(2)});
 
+
 const btn9 = document.querySelector("#btn9 button");
 btn9.addEventListener("click",() => {displayToScreen(9)});
 
@@ -37,21 +45,36 @@ btn3.addEventListener("click",() => {displayToScreen(3)});
 
 //operationPad
 const btnMinus = document.querySelector("#btnMinus button");
-btnMinus.addEventListener("click",() => {displayToScreen("-")});
+btnMinus.addEventListener("click",() => {
+	getNum1(inputScreen.textContent);
+	inputScreen.textContent = " ";
+	displayToScreen("-")
+});
 
 const btnAdd = document.querySelector("#btnAdd button");
-btnAdd.addEventListener("click",() => {displayToScreen("+")});
+btnAdd.addEventListener("click",() => {
+	getNum1(inputScreen.textContent);
+	inputScreen.textContent = " ";
+	displayToScreen("+")
+});
 
 const btnMultiply = document.querySelector("#btnMultiply button");
-btnMultiply.addEventListener("click",() => {displayToScreen("*")});
+btnMultiply.addEventListener("click",() => {
+	getNum1(inputScreen.textContent);
+	inputScreen.textContent = " ";
+	displayToScreen("×")
+});
 
 
 const btnDivide = document.querySelector("#btnDivide button");
-btnDivide.addEventListener("click",() => {displayToScreen("/")});
+btnDivide.addEventListener("click",() => {
+	getNum1(inputScreen.textContent);
+	inputScreen.textContent = " ";
+	displayToScreen("÷")
+});
 
 
 const btnEquals = document.querySelector("#btnEquals button");
-btnEquals.addEventListener("click",() => {displayToScreen("=")});
 
 const btnAC = document.querySelector("#btnAC button");
 btnAC.addEventListener("click",() => {inputScreen.textContent = " "});
