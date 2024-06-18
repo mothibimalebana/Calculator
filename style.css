@@ -1,0 +1,45 @@
+body {
+	min-height: 100vh;
+	margin: 0;
+
+	color: black;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.calculator {
+	height: 1750px;
+	width: 1000px;
+
+	font-size: 100px;
+	font-weight: 500;
+	font-family: "Roboto";
+}
+
+.calcScreen {
+	height: 500px;
+	width: 1000px;
+
+	background-color: #5C79D9;
+}
+
+.calcButtons {
+	min-height: 1250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+.firstRow {
+	min-width: 1000px;
+
+	display: flex;
+	flex-direction: row;
+
+	justify-content: space-around;
+	align-items: center;
+}
