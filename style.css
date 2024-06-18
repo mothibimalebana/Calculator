@@ -60,6 +60,10 @@ body {
 	line-height: normal;
 }
 
+.calcButtons button:focus {
+	border-style: solid;
+}
+
 
 .firstRow {
 	min-width: 1000px;
