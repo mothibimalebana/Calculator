@@ -16,13 +16,28 @@ body {
 	font-size: 100px;
 	font-weight: 500;
 	font-family: "Roboto";
+	font-style: normal;
+	line-height: normal;
 }
 
 .calcScreen {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: end;
 	height: 500px;
 	width: 1000px;
 
 	background-color: #5C79D9;
+}
+
+.calcScreen .inputScreen {
+	display: flex;
+	justify-content: end;
+	align-items: end;
+	color: white;
+
+	padding: 30px;
 }
 
 .calcButtons {
@@ -30,6 +45,19 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+.calcButtons button {
+	width: 250px;
+	height: 250px;
+	border-style: none;
+	background-color: white;
+
+	font-size: 100px;
+	font-weight: 500;
+	font-family: "Roboto";
+	font-style: normal;
+	line-height: normal;
 }
 
 
@@ -42,6 +70,10 @@ body {
 
 	justify-content: space-around;
 	align-items: center;
+}
+
+.firstRow button {
+	background-color: #E2E9FF;
 }
 
 .firstRow div {

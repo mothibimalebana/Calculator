@@ -1,5 +1,6 @@
 //variables
 let num1, num2, op;
+let inputScreen = document.querySelector(".inputScreen");
 
 //arithmetic functions
 function add(num1, num2) {
