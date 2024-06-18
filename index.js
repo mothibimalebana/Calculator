@@ -15,7 +15,7 @@ function divide(num1, num2) {
 	return num1 / num2
 }
 
-//operation function
+//operate function
 function operate(op, num1, num2){
 	switch(op){
 		case '+':
