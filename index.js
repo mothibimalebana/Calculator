@@ -16,6 +16,22 @@ function divide(num1, num2) {
 }
 
 //operation function
-operation(op, num1, num2){
-	switch()
+function operate(op, num1, num2){
+	switch(op){
+		case '+':
+			result = add(num1,num2)
+			break;
+		case '-':
+			result = subtract(num1,num2)
+			break;
+		case '*':
+			result = multiply(num1,num2)
+			break;
+		case '/':
+			result = divide(num1,num2)
+			break;
+		default:
+			alert("invalid operator");
+	}
+	return result;
 }
