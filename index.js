@@ -1,7 +1,7 @@
 //variables
 let num1, num2, op, regEx;
 let operatorsArray = ['+', '*', '-', '/'];
-let numberArray = ['0','1','2','3','4','5','6','7','8','9'];
+let numberArray = ['0','1','2','3','4','5','6','7','8','9', '.'];
 
 /*Screen*/
 let inputScreen = document.querySelector(".inputScreen");
@@ -32,17 +32,17 @@ let no0 = document.querySelector('#no0');
 let del = document.querySelector('#del');
 let numEquals = document.querySelector('#numEquals');
 
-no7.addEventListener("click", () => displayRegEx(7))
-no8.addEventListener("click", () => displayRegEx(8))
-no9.addEventListener("click", () => displayRegEx(9))
-no4.addEventListener("click", () => displayRegEx(4))
-no5.addEventListener("click", () => displayRegEx(5))
-no6.addEventListener("click", () => displayRegEx(6))
-no1.addEventListener("click", () => displayRegEx(1))
-no2.addEventListener("click", () => displayRegEx(2))
-no3.addEventListener("click", () => displayRegEx(3))
-no0.addEventListener("click", () => displayRegEx(0))
-
+no7.addEventListener("click", () => displayRegEx('7'))
+no8.addEventListener("click", () => displayRegEx('8'))
+no9.addEventListener("click", () => displayRegEx('9'))
+no4.addEventListener("click", () => displayRegEx('4'))
+no5.addEventListener("click", () => displayRegEx('5'))
+no6.addEventListener("click", () => displayRegEx('6'))
+no1.addEventListener("click", () => displayRegEx('1'))
+no2.addEventListener("click", () => displayRegEx('2'))
+no3.addEventListener("click", () => displayRegEx('3'))
+no0.addEventListener("click", () => displayRegEx('0'))
+''
 
 C.addEventListener("click", () => clear())
 decimal.addEventListener("click", () => displayRegEx('.'))
@@ -54,8 +54,19 @@ nox.addEventListener("click", () => displayRegEx('x'))
 function getRegEx(){
 	regEx = inputScreen.textContent;
 }
+function sliceRegex(){
+
+}
 function displayRegEx(num){
+	if(numberArray.includes(num)) {
 	inputScreen.textContent += num
+	}
+	else{
+	}
+
+}
+function operatorClear(){
+	inputScreen.textContent = " "
 }
 function clear(){
 	num1 = " "
