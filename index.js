@@ -1,5 +1,5 @@
 //variables
-let num1, num2, op, regEx;
+let num1, num2, op, regEx, result;
 let operatorsArray = ['+', '*', '-', '/'];
 let numberArray = ['0','1','2','3','4','5','6','7','8','9', '.'];
 
@@ -45,51 +45,18 @@ no0.addEventListener("click", () => displayRegEx('0'))
 ''
 
 C.addEventListener("click", () => clear())
-decimal.addEventListener("click", () => displayRegEx('.'))
-numAdd.addEventListener("click", () => displayRegEx('+'))
-numSubtract.addEventListener("click", () => displayRegEx('-'))
-numDivide.addEventListener("click", () => displayRegEx('/'))
-nox.addEventListener("click", () => displayRegEx('x'))
+decimal.addEventListener("click", () => operatorClicked('.'))
+numAdd.addEventListener("click", () => operatorClicked('+'))
+numSubtract.addEventListener("click", () => operatorClicked('-'))
+numDivide.addEventListener("click", () => operatorClicked('/'))
+nox.addEventListener("click", () => operatorClicked('x'))
+numEquals.addEventListener("click", () => displayResult(result))
 
-function getRegEx(regEx){
-	regEx = inputScreen.textContent;
-}
 function displayRegEx(num){
 	if(numberArray.includes(num)) {
 	inputScreen.textContent += num
 	}
 	else{
-	}
-}
-function operatorClicked(opClicked){
-	op = opClicked;
-}
-function operatorClear(){
-	inputScreen.textContent = " "
-}
-function clear(){
-	num1 = " "
-	num2 = " "
-	op = " "
-	inputScreen.textContent = " "
-}
-function stringToNumber(string){
-	return num1 = Number(num1);
-}
-function getNum1(regEx){
-	num1 = regEx.slice(1);
-	return num1;
-}
-function isOperator(regEx){
-	if (operatorsArray.includes(regEx[0])){
-		getNum1(regEx);
-	}
-	else{
-		stringToNumber(regEx)
-	}
-}
-function isNumber(regex){
-	if(numberArray.includes(regex)){
 	}
 }
 //arithmetic functions
@@ -105,39 +72,51 @@ function multiply(num1, num2){
 function divide(num1, num2){
 	return num1 / num2
 }
-
 //operate function
 function operate(op, num1, num2){
-	switch(op){
+	getNum2(op);
+	result = add(num1, num2)
+}
+function displayResult(result){
+
+	inputScreen.textContent = Number(result);
+}
+
+
+//functionality
+function getNum1(){
+	num1 = Number(inputScreen.textContent);
+	return num1
+}
+function getNum2(op){
+	if(num2===undefined){
+		switch(op){
 		case '+':
-			if(num2 === undefined){
-				num2 = 0;
-			}
-			result = add(num1,num2)
+			num2 = 0;
 			break;
 		case '-':
-			if(num2 === undefined){
-				num2 = 0;
-			}
-			result = subtract(num1,num2)
+			num2 = 0;
 			break;
 		case '*':
-			if(num2 === undefined){
-				num2 = 1;
-			}
-			result = multiply(num1,num2)
+			num2 = 1;
 			break;
 		case '/':
-			if(num2 === undefined){
-				num2 = 1;
-			}
-			result = divide(num1,num2)
+			num2 = 1;
 			break;
 		default:
 			alert("invalid operator");
+		}
 	}
-	displayResult(result);
-}
-function displayResult(result){
-	inputScreen.textContent = result;
+	else{
+		num2 = result
+	}
+}or;
+getNum1();
+
+function operatorClicked(operator){
+	op = operator;
+	getNum1();
+	getNum2(operator)	
+	operatorClear();
+	operate(op, num1, num2)
 }
