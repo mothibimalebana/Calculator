@@ -3,6 +3,8 @@ let num1, num2, op, regEx;
 let operatorsArray = ['+', '*', '-', '/'];
 let numberArray = ['0','1','2','3','4','5','6','7','8','9'];
 
+//testing1
+
 /*Screen*/
 let inputScreen = document.querySelector(".inputScreen");
 /*Keyboard*/
