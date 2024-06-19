@@ -51,7 +51,7 @@ numSubtract.addEventListener("click", () => displayRegEx('-'))
 numDivide.addEventListener("click", () => displayRegEx('/'))
 nox.addEventListener("click", () => displayRegEx('x'))
 
-function getRegEx(){
+function getRegEx(regEx){
 	regEx = inputScreen.textContent;
 }
 function sliceRegex(){
@@ -63,6 +63,9 @@ function displayRegEx(num){
 	}
 	else{
 	}
+
+}
+function operatorClicked(op){
 
 }
 function operatorClear(){
