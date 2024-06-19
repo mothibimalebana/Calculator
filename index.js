@@ -54,9 +54,6 @@ nox.addEventListener("click", () => displayRegEx('x'))
 function getRegEx(regEx){
 	regEx = inputScreen.textContent;
 }
-function sliceRegex(){
-
-}
 function displayRegEx(num){
 	if(numberArray.includes(num)) {
 	inputScreen.textContent += num
@@ -65,8 +62,8 @@ function displayRegEx(num){
 	}
 
 }
-function operatorClicked(op){
-
+function operatorClicked(opClicked){
+	op = opClicked;
 }
 function operatorClear(){
 	inputScreen.textContent = " "
@@ -80,25 +77,16 @@ function clear(){
 function stringToNumber(string){
 	return num1 = Number(num1);
 }
-function spliceRegEx(regEx){
-	op = regEx[0].slice(0);
+function getNum1(regEx){
 	num1 = regEx.slice(1);
-	stringToNumber(num1);
+	return num1;
 }
 function isOperator(regEx){
 	if (operatorsArray.includes(regEx[0])){
-		spliceRegEx(regEx);
+		getNum1(regEx);
 	}
 	else{
 		stringToNumber(regEx)
-	}
-}
-function isNumber(regex){
-	if(numberArray.includes(regex)){
-		return true
-	}
-	else{
-		return false
 	}
 }
 
