@@ -60,7 +60,6 @@ function displayRegEx(num){
 	}
 	else{
 	}
-
 }
 function operatorClicked(opClicked){
 	op = opClicked;
@@ -89,7 +88,10 @@ function isOperator(regEx){
 		stringToNumber(regEx)
 	}
 }
-
+function isNumber(regex){
+	if(numberArray.includes(regex)){
+	}
+}
 //arithmetic functions
 function add(num1, num2){
 	return num1 + num2
