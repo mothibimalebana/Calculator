@@ -3,8 +3,6 @@ let num1, num2, op, regEx;
 let operatorsArray = ['+', '*', '-', '/'];
 let numberArray = ['0','1','2','3','4','5','6','7','8','9'];
 
-//testing1
-
 /*Screen*/
 let inputScreen = document.querySelector(".inputScreen");
 /*Keyboard*/
@@ -34,25 +32,29 @@ let no0 = document.querySelector('#no0');
 let del = document.querySelector('#del');
 let numEquals = document.querySelector('#numEquals');
 
-no7.addEventListener("click", () => getRegEx(7))
-no8.addEventListener("click", () => getRegEx(8))
-no9.addEventListener("click", () => getRegEx(9))
-no4.addEventListener("click", () => getRegEx(4))
-no5.addEventListener("click", () => getRegEx(5))
-no6.addEventListener("click", () => getRegEx(6))
-no1.addEventListener("click", () => getRegEx(1))
-no2.addEventListener("click", () => getRegEx(2))
-no3.addEventListener("click", () => getRegEx(3))
-no0.addEventListener("click", () => getRegEx(0))
+no7.addEventListener("click", () => displayRegEx(7))
+no8.addEventListener("click", () => displayRegEx(8))
+no9.addEventListener("click", () => displayRegEx(9))
+no4.addEventListener("click", () => displayRegEx(4))
+no5.addEventListener("click", () => displayRegEx(5))
+no6.addEventListener("click", () => displayRegEx(6))
+no1.addEventListener("click", () => displayRegEx(1))
+no2.addEventListener("click", () => displayRegEx(2))
+no3.addEventListener("click", () => displayRegEx(3))
+no0.addEventListener("click", () => displayRegEx(0))
 
 
 C.addEventListener("click", () => clear())
-decimal.addEventListener("click", () => getRegEx('.'))
-numAdd.addEventListener("click", () => getRegEx('+'))
-numSubtract.addEventListener("click", () => getRegEx('-'))
-numDivide.addEventListener("click", () => getRegEx('/'))
-nox.addEventListener("click", () => getRegEx('x'))
-function getRegEx(num){
+decimal.addEventListener("click", () => displayRegEx('.'))
+numAdd.addEventListener("click", () => displayRegEx('+'))
+numSubtract.addEventListener("click", () => displayRegEx('-'))
+numDivide.addEventListener("click", () => displayRegEx('/'))
+nox.addEventListener("click", () => displayRegEx('x'))
+
+function getRegEx(){
+	regEx = inputScreen.textContent;
+}
+function displayRegEx(num){
 	inputScreen.textContent += num
 }
 function clear(){
