@@ -53,6 +53,7 @@ nox.addEventListener("click", () => operatorClicked('x'))
 numEquals.addEventListener("click", () => displayResult(result))
 
 function displayRegEx(num){
+	clearScreen();
 	if(numberArray.includes(num)) {
 	inputScreen.textContent += num
 	}
@@ -64,6 +65,29 @@ function clearScreen(){
 }
 function getNum1(){
 	num1 = Number(inputScreen.textContent);
+}
+function getNum2(op){
+	if(result === undefined){
+		switch(op){
+			case '+':
+				num2 = 0;
+				break;
+			case '-':
+				num2 = 0;
+				break;
+			case 'x':
+				num2 = 1;
+				break;
+			case '/':
+				num2 = 1;
+				break;
+			default:
+				alert("invalid operator");
+		}
+	}
+	else{
+		num2 = result;
+	}
 }
 
 //arithmetic functions
@@ -89,23 +113,15 @@ function clear(){
 function operate(op, num1, num2){
 	switch(op){
 		case '+':
-			if(num2 === undefined)
-				num2 = 0
 			result = add(num1, num2);
 			break;
 		case '-':
-			if(num2 === undefined)
-				num2 = 0
 			result = subtract(num1, num2);
 			break;
 		case 'x':
-			if(num2 === undefined)
-				num2 = 1
 			multiply(num1, num2);
 			break;
 		case '/':
-			if(num2 === undefined)
-				num2 = 1
 			divide(num1, num2);
 			break;
 		default:
@@ -117,6 +133,7 @@ function operate(op, num1, num2){
 
 function operatorClicked(op){
 	getNum1();
-	getNum2();
-	clearScreen();
+	getNum2(op);
+	operate(op, num1, num2);
+	inputScreen.textContent = result
 }
