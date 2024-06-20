@@ -59,6 +59,13 @@ function displayRegEx(num){
 	else{
 	}
 }
+function clearScreen(){
+	inputScreen.textContent = " ";
+}
+function getNum1(){
+	num1 = Number(inputScreen.textContent);
+}
+
 //arithmetic functions
 function add(num1, num2){
 	return num1 + num2
@@ -72,51 +79,44 @@ function multiply(num1, num2){
 function divide(num1, num2){
 	return num1 / num2
 }
+function clear(){
+	inputScreen.textContent = ' ';
+	num1 = 0;
+	num2 = 0;
+	result = 0;
+}
 //operate function
 function operate(op, num1, num2){
-	getNum2(op);
-	result = add(num1, num2)
-}
-function displayResult(result){
-
-	inputScreen.textContent = Number(result);
-}
-
-
-//functionality
-function getNum1(){
-	num1 = Number(inputScreen.textContent);
-	return num1
-}
-function getNum2(op){
-	if(num2===undefined){
-		switch(op){
+	switch(op){
 		case '+':
-			num2 = 0;
+			if(num2 === undefined)
+				num2 = 0
+			result = add(num1, num2);
 			break;
 		case '-':
-			num2 = 0;
+			if(num2 === undefined)
+				num2 = 0
+			result = subtract(num1, num2);
 			break;
-		case '*':
-			num2 = 1;
+		case 'x':
+			if(num2 === undefined)
+				num2 = 1
+			multiply(num1, num2);
 			break;
 		case '/':
-			num2 = 1;
+			if(num2 === undefined)
+				num2 = 1
+			divide(num1, num2);
 			break;
 		default:
 			alert("invalid operator");
-		}
 	}
-	else{
-		num2 = result
-	}
-}or;
-getNum1();
+	return result
 
-function operatorClicked(operator){
-	op = operator;
+}
+
+function operatorClicked(op){
 	getNum1();
-	getNum2(operator)	
-	operatorClear();
-	operate(op, num1, num2)
+	getNum2();
+	clearScreen();
 }
